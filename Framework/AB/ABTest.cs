@@ -18,10 +18,10 @@ namespace FrameworkDesign
                 if (isSucceed)
                 {
                     Debug.Log("更新完成");
-                    ABManager.Instance.Load<GameObject>("test", "Cube");
-                    await ABManager.Instance.LoadAsync<GameObject>("test", "Sphere");
-                    ABManager.Instance.Load<GameObject>("test", "Capsule");
-
+                    //ABManager.Instance.Load<GameObject>("test", "Cube");
+                    //await ABManager.Instance.LoadAsync<GameObject>("test", "Sphere");
+                    //ABManager.Instance.Load<GameObject>("test", "Capsule");
+                    //var luaManager = LuaManager.Instance;
                 }
                 else
                 {
@@ -37,18 +37,6 @@ namespace FrameworkDesign
             {
                 Debug.Log("下载进度:" + schedule);
             });
-        }
-
-
-        private void Start()
-        {
-            
-        }
-
-
-        private void Update()
-        {
-
         }
     }
 }

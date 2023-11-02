@@ -85,7 +85,6 @@ namespace FrameworkDesign
                 else
                     callBack(true);
             }
-            
         }
 
         //下载AB包资源对比文件中的AB包资源
@@ -94,7 +93,7 @@ namespace FrameworkDesign
             //获取对比文件的信息
             var path = Application.persistentDataPath + targetPlatform + "/ABCompare.date";
             var json = File.ReadAllText(path);
-            var date = JsonUtility.FromJson<Serialization<ABInfo>>(json);
+            var date = JsonUtility.FromJson<SerializationList<ABInfo>>(json);
             var dateList = date.ToList;
 
             //以下载列表缓存
@@ -314,7 +313,7 @@ namespace FrameworkDesign
         /// </summary>
         /// <param name="filePath"></param>
         /// <returns></returns>
-        public string GetMD5(string filePath)
+        public static string GetMD5(string filePath)
         {
             //将文件以流的形式打开
             FileStream fileStream = new FileStream(filePath, FileMode.Open);
@@ -340,7 +339,7 @@ namespace FrameworkDesign
         /// </summary>
         /// <param name="fileStream"></param>
         /// <returns></returns>
-        public string GetMD5(Stream fileStream)
+        public static string GetMD5(Stream fileStream)
         {
             //将文件以流的形式打开
             //FileStream fileStream = new FileStream(filePath, FileMode.Open);
